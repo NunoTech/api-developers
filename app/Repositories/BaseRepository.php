@@ -22,7 +22,11 @@ class BaseRepository
         return $this->model->all();
     }
 
-    public function getById($id)
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public function getById(int $id)
     {
         $model = $this->model->find($id);
         if(!$model)
@@ -31,12 +35,22 @@ class BaseRepository
 
     }
 
-    public function create($attributes)
+    /**
+     * @param array $attributes
+     * @return mixed
+     */
+
+    public function create(array $attributes)
     {
         return $this->model->create($attributes);
     }
 
-    public function update($attributes, $id)
+    /**
+     * @param array $attributes
+     * @param int $id
+     * @return mixed
+     */
+    public function update(array $attributes, int $id)
     {
         $model = $this->model->find($id);
         if(!$model)
@@ -44,7 +58,12 @@ class BaseRepository
         return $model;
 
     }
-    public function destroy($id)
+
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public function destroy(int $id)
     {
         $model = $this->model->find($id);
 
