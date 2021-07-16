@@ -4,16 +4,17 @@
 namespace App\Repositories\Developers;
 
 
-use App\Models\Developer;
+
+use App\Models\User;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Collection;
 
 
-class DevelopersRepository extends BaseRepository implements DevelopersRepositoryInterface
+class UsersRepository extends BaseRepository implements UsersRepositoryInterface
 {
     protected $model;
 
-    public function __construct(Developer $model)
+    public function __construct(User $model)
     {
         parent::__construct($model);
         $this->model= $model;

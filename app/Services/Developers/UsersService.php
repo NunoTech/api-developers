@@ -4,15 +4,22 @@
 namespace App\Services\Developers;
 
 
-class DevelopersService implements DevelopersServiceInterface
+use App\Repositories\Developers\UsersRepositoryInterface;
+
+class UsersService implements UsersServiceInterface
 {
+    protected $usersRepository;
+    public function __construct(UsersRepositoryInterface $usersRepository)
+    {
+        $this->usersRepository = $usersRepository;
+    }
 
     /**
      * @return mixed
      */
     public function getAll()
     {
-
+        return $this->usersRepository->getAll();
     }
 
     /**
@@ -31,6 +38,7 @@ class DevelopersService implements DevelopersServiceInterface
     public function create(array $attributes)
     {
 
+            return $this->usersRepository->create($attributes);
     }
 
     /**

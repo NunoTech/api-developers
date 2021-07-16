@@ -32,7 +32,6 @@ class BaseRepository
         if(!$model)
             return throw new ModelNotFoundException();
         return $model;
-
     }
 
     /**
@@ -42,6 +41,7 @@ class BaseRepository
 
     public function create(array $attributes)
     {
+
         return $this->model->create($attributes);
     }
 
@@ -56,7 +56,6 @@ class BaseRepository
         if(!$model)
             return throw new ModelNotFoundException();
         return $model;
-
     }
 
     /**

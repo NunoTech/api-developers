@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Services\Developers;
+namespace App\Repositories\Developers;
 
 
-interface DevelopersServiceInterface
+interface UsersRepositoryInterface
 {
     /**
      * @return mixed
@@ -12,7 +12,7 @@ interface DevelopersServiceInterface
     public function getAll();
 
     /**
-     * @param int $id
+     * @param $id
      * @return mixed
      */
     public function getById(int $id);
@@ -31,9 +31,8 @@ interface DevelopersServiceInterface
     public function update(array $attributes, int $id);
 
     /**
-     * @param $id
+     * @param int $id
      * @return mixed
      */
-    public function delete($id);
-
+    public function destroy(int $id);
 }
